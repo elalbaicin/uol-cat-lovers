@@ -1,0 +1,9 @@
+Uma solução possível é implantar o script Python em Google App Engine;
+o próprio GCP providencia auto scaling e load balancing.
+
+Ademais, pode-se agendar a execução da extração em App Engine
+com um um arquivo YAML a fim de extrair novos dados regularmente.
+
+Além das adaptações necessárias ao diretório do aplicativo,
+seria preciso adaptar o script para exportar os dados extraídos
+ao destino final, e.g. Google Cloud Storage, BigQuery ou Datastore/Firestore.

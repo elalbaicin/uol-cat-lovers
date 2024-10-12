@@ -1,0 +1,23 @@
+Como observado em questao2.txt, provavelmente será necessário
+transformar algumas colunas para exportação ao BigQuery;
+algumas têm valores indisponíveis/nulos, que o schema da tabela pode rejeitar,
+a coluna "status" contém objetos json, que podem ser separados ou representados de mais de uma forma,
+e as de data originalmente vêm como strings da API,
+mas muitas vezes se deseja que estejam em formato timestamp ou datetime.
+Cabe ainda se atentar ao fuso horário das colunas de data-hora.
+
+Supondo que todas essas preocupações se resolvam no script,
+o schema poderia se descrever deste modo em Python:
+
+[{"name": "status", "type": "STRING"},
+ {"name": "_id", "type": "STRING"},
+ {"name": "user", "type": "STRING"},
+ {"name": "text", "type": "STRING"},
+ {"name": "text", "type": "STRING"},
+ {"name": "type", "type": "STRING"},
+ {"name": "deleted", "type": "BOOLEAN"},
+ {"name": "createdAt", "type": "TIMESTAMP"},
+ {"name": "updatedAt", "type": "TIMESTAMP"},
+ {"name": "__v", "type": "INTEGER"},
+ {"name": "source", "type": "STRING"},
+ {"name": "used", "type": "BOOLEAN"}]

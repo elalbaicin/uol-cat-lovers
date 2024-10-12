@@ -1,0 +1,4 @@
+SELECT *
+FROM catlovers.facts -- Hypothetic table name
+-- Updates in August 2020; no timezone adjustments
+WHERE updatedAt >= '2020-08-01' AND updatedAt < '2020-09-01'

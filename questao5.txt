@@ -1,0 +1,3 @@
+SELECT CONCAT(text, ',', createdAt, ',', updatedAt) AS `text,createdAt,updatedAt`
+FROM catlovers.facts -- Hypothetic table name
+TABLESAMPLE SYSTEM (10 PERCENT)
